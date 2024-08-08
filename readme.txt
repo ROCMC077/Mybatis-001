@@ -39,3 +39,8 @@
     2. XxxxMapper.xml 專門用來編寫SQL語句的配置文件 (一張表一個)
         t_user表, 一般對應一個UserMapper.xml
         t-student表, 一般對應一個StudentMapper.xml
+
+4.小細節
+    *mybatis中的sql語句結尾 ; 可加可不加
+    *Resources.getResourceAsStream
+        小技巧: 以後遇到resource這個單字, 大部分都是從類的根目錄下開始查找

@@ -20,6 +20,17 @@
         注意:resource屬性會自動從類的根目錄下開始查找資源
 
     (6)編寫Mybatis (使用Mybatis的類庫,編寫mybatis連接數據庫做增刪改查)
+        在Mybatis中負責執行SQL語句的對象叫 SqlSession
+        SqlSession是專門用來執行SQL, 是一個Java程式和資料庫之間的一次會話
+            要獲取 SqlSession, 需要先獲取 SqlSessionFactory對象, 通過 SqlSessionFactory工廠來產生
+            要獲取 SqlSessionFactory對象, 需要先獲取 SqlSessionBuilder對象, 通過 SqlSessionBuilder對象的Build方法來獲取SqlSessionFactory對象
+
+        Mybatis的核心對象包括
+            SqlSessionFactoryBuilder
+            SqlSessionFactory
+            SqlSession
+            ( SqlSessionBuilder.build 建立 SqlSessionFactory 再建立 SqlSession )
+
 
 2.從 XML 中構建 SqlSessionFactory
 

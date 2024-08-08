@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xxxxxx">
+<!--    <select id="selectBlog" resultType="Blog"></select>-->
+<!--    insert語句, id是這條SQL語句唯一標示, 這個id就等於這條SQL -->
+    <insert id="insertCar">
+        insert into t_car(id,car_num,brand,guide_price,produce_time,car_type)
+        values (null,'1003','honda',30.0,'1999-04-04','油車')
+    </insert>
+<!--    <update id="selectBlog"></update>-->
+<!--    <delete id="selectBlog"></delete>-->
+
+</mapper>

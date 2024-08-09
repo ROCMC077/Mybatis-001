@@ -23,7 +23,7 @@
         在Mybatis中負責執行SQL語句的對象叫 SqlSession
         SqlSession是專門用來執行SQL, 是一個Java程式和資料庫之間的一次會話
             要獲取 SqlSession, 需要先獲取 SqlSessionFactory對象, 通過 SqlSessionFactory工廠來產生
-            要獲取 SqlSessionFactory對象, 需要先獲取 SqlSessionBuilder對象, 通過 SqlSessionBuilder對象的Build方法來獲取SqlSessionFactory對象
+            要獲取 SqlSessionFactory對象, 需要先獲取 SqlSessionBuilder對象, 通過 SqlSessionFactoryBuilder對象的Build方法來獲取SqlSessionFactory對象
 
         Mybatis的核心對象包括
             SqlSessionFactoryBuilder

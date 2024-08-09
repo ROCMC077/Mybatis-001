@@ -23,6 +23,20 @@
             <version>8.2.0</version>
         </dependency>
 
+        <!-- junit驅動依賴-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- 引入logback依賴, 這個日誌框架實現了slf4j規範 -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.4.14</version>
+        </dependency>
 
 
     </dependencies>

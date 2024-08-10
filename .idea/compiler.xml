@@ -7,8 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="junit-test" />
-        <module name="mybatis-002-crud" />
+        <module name="mybatis-002-crud (1)" />
         <module name="mybatis-001-introduction" />
+        <module name="mybatis-002-crud" />
       </profile>
     </annotationProcessing>
   </component>

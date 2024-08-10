@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- default表示默認使用的環境 -->
+    <!-- 當使用mybatis創建 SqlSessionFactory對象的時候, 沒有指定環境的話, 則使用默認環境 -->
+    <environments default="mybatisDB">
+        <!-- 其中一個環境, 連接的數據庫是mybatis -->
+        <!-- 一般一個數據庫會對應一個SqlSessionFactory對象 -->
+        <!-- 一個環境 environment 會對應一個SqlSessionFactory對象 -->
+        <environment id="mybatisDB">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>
+                <property name="username" value="root"/>
+                <property name="password" value="password"/>
+            </dataSource>
+        </environment>
+
+        <!-- 這是 mybatis 另一個環境, 連接的數據庫是powernode -->
+        <environment id="powernodeDB">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/powernode"/>
+                <property name="username" value="root"/>
+                <property name="password" value="password"/>
+            </dataSource>
+        </environment>
+
+    </environments>
+
+    <mappers>
+        <mapper resource="CarMapper.xml"/>
+    </mappers>
+</configuration>

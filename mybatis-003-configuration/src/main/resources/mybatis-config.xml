@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- default表示默認使用的環境 -->
+    <!-- 當使用mybatis創建 SqlSessionFactory對象的時候, 沒有指定環境的話, 則使用默認環境 -->
+    <environments default="mybatisDB">
+        <!-- 其中一個環境, 連接的數據庫是mybatis -->
+        <!-- 一般一個數據庫會對應一個SqlSessionFactory對象 -->
+        <!-- 一個環境 environment 會對應一個SqlSessionFactory對象 -->
+        <environment id="mybatisDB">
+            <!--
+                transactionManager標籤
+                    1.作用: 配置事務管理器, 指定mybatis具體使用甚麼方式管理事務
+                    2.type屬性有兩種
+                        第一個: JDBC:使用原生JDBC代碼來管理事務.
+                                    conn.setAutoCommit(false)
+                                    ....
+                                    conn.commit();
+                        第二個: MANAGED:mybatis不再負責事務管理, 將事務管理交給其他 JAVAEE 容器管理(例:Spring)
+                    3.大小寫無所謂, 但只能寫這兩種值
+                    4.在mybatis中提供一個事務管理器接口: Transaction
+                        該接口下有兩個實現類
+                            JdbcTransaction
+                            managedTransaction
+                        如果Type = JDBC 底層實例化 JdbcTransaction
+                        如果Type = MANAGED 底層實例化 managedTransaction
+             -->
+        <transactionManager type="JDBC"/>
+        <!--
+            dataSource配置:
+                1.dataSource 被稱作數據源
+                2.dataSource作用是為程序提供 Connection對象, (但凡是給程序提供Connection對象的,都叫數據源)
+                3.數據源實際上是一種規範, JDK中有這套規範, javax.sql.DataSource
+                4.數據源可以自己寫,前提是要實現 javax.sql.DataSource 這個接口中的所有方法
+                    例:寫一個資料庫連接池 (資料庫連接池是提供連接對象的, 所以資料庫連接池也可以稱做是一個數據源 )
+                5.【常見的數據源組件 (資料庫連接池)】
+                     阿里巴巴的德魯伊:druid,
+                     c3p0,
+                     dbcp...etc
+                6.type屬性用來指定數據源的類型,指定使用什麼方式獲取 Connection 對象
+                     type屬性有3種: 必須3選1,("[UNPOOLED,POOLED,JNDI]")
+                        UNPOOLED:不使用資料庫連接池技術, 每一次請求都會創新的 Connection對象
+                        POOLED  :使用mybatis自己實現的資料庫連接池
+                        JNDI    :集成其他第三方資料庫連接池
+
+                        JNDI是一套規範, 大部分web容器都實現JNDI規範
+                            例: Tomcat, Jetty, WebLogic...etc
+                        JNDI是: java命名目錄接口, Tomcat服務器實現了這個規範
+         -->
+        <dataSource type="POOLED">
+            <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>
+            <property name="username" value="root"/>
+            <property name="password" value="password"/>
+        </dataSource>
+    </environment>
+
+    <!-- 這是 mybatis 另一個環境, 連接的數據庫是powernode -->
+        <environment id="powernodeDB">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/powernode"/>
+                <property name="username" value="root"/>
+                <property name="password" value="password"/>
+            </dataSource>
+        </environment>
+
+    </environments>
+
+    <mappers>
+        <mapper resource="CarMapper.xml"/>
+    </mappers>
+</configuration>

@@ -9,8 +9,12 @@
         <module name="junit-test" />
         <module name="mybatis-002-crud (1)" />
         <module name="mybatis-001-introduction" />
+        <module name="mybatis-004-param" />
         <module name="mybatis-002-crud" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mybatis-010-advanced-mapping" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -9,5 +9,9 @@
     <file url="file://$PROJECT_DIR$/mybatis-002-crud/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis-003-configuration/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis-003-configuration/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-004-param/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-004-param/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-010-advanced-mapping/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-010-advanced-mapping/src/main/resources" charset="UTF-8" />
   </component>
 </project>

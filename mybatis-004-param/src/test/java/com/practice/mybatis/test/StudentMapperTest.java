@@ -12,6 +12,26 @@ import java.util.*;
 
 public class StudentMapperTest {
 
+
+    @Test
+    public void testSelectStudentByNameAndSex2(){
+        SqlSession sqlSession = SqlSessionUtil.openSession();
+        StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+        List<Student> students = mapper.selectStudentByNameAndSex2("小明", '男');
+        students.forEach(student -> System.out.println(student));
+        sqlSession.close();
+    }
+
+    @Test
+    public void testSelectStudentByNameAndSex(){
+        SqlSession sqlSession = SqlSessionUtil.openSession();
+        StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+        List<Student> students = mapper.selectStudentByNameAndSex("小明", '男');
+        students.forEach(student -> System.out.println(student));
+        sqlSession.close();
+    }
+
+
     @Test
     public void testInsertStudentByPOJO(){
         SqlSession sqlSession = SqlSessionUtil.openSession();

@@ -13,5 +13,8 @@
         <module name="mybatis-002-crud" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mybatis-010-advanced-mapping" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

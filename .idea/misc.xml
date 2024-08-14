@@ -9,7 +9,13 @@
         <option value="$PROJECT_DIR$/mybatis-003-configuration/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis-002-crud/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis-004-param/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-010-advanced-mapping/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/mybatis-010-advanced-mapping/pom.xml" />
+      </set>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>
